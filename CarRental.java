@@ -1,41 +1,3 @@
-/*
-
-	- name: String
-	- owner: String
-	- manager: String
-	- foundation: String
-	- headquarters: String
-	- revenue: float[][]
-	- cars: Car[]
-
-	--------------------------------------
-
-	+ CarRental(Name:String,):CarRental
-
-	\\ Get
-
-	+ get_Name():String
-	+ get_foundation():String 
-	+ get_headquarters():String 
-	+ get_revenue(): float[][]
-	+ get_owner() : String 
-	+ get_manager():String
-	+ get_cars():Car[]
-
-	\\ Set
-	 
-	+ set_Name(Name:String):void
-	+ set_foundation(foundation:String):void
-	+ set_headquarters(headquarters:String):void
-	+ set_rvenue(revenue:float[]):void
-	+ set_manager(manager:String):void
-	+ set_owner(owner:String):void
-
-	// method
-
-	+ buy_car(cars:Car):void
-
-*/
 
 import java.util.Scanner;
 import java.io.IOException;
@@ -62,7 +24,6 @@ public class CarRental {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 		CarRental rental = new CarRental("", "");
 		boolean exit = false;
