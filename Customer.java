@@ -13,25 +13,7 @@ public class Customer {
 		this.licensePlate = lPlate;
 	}
 
-	// Set
-
-	public void setName(String Name) {
-		this.name = Name;
-	}
-	public void setSurname(String Surname) {
-		this.surname = Surname;
-	}
-	public void setDOB(String DOB) {
-		this.dateOfBirth = DOB;
-	}
-	public void setStartDateRent(String startrent) {
-		this.startDateRent = startrent;
-	}
-	public void setEndDateRent(String endrent) {
-		this.endDateRent = endrent;
-	}
-	
-	// Get
+	// ------------- Get -------------
 	public String getName() {
 		return this.name;
 	}
@@ -53,6 +35,24 @@ public class Customer {
 	
 	public String getEndDateRent() {
 		return this.endDateRent;
+	}
+
+	// ------------- Set -------------
+
+	public void setName(String Name) {
+		this.name = Name;
+	}
+	public void setSurname(String Surname) {
+		this.surname = Surname;
+	}
+	public void setDOB(String DOB) {
+		this.dateOfBirth = DOB;
+	}
+	public void setStartDateRent(String startrent) {
+		this.startDateRent = startrent;
+	}
+	public void setEndDateRent(String endrent) {
+		this.endDateRent = endrent;
 	}
 
 }
