@@ -1,5 +1,5 @@
 
-import java.util.Scanner;
+
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -15,12 +15,13 @@ public class CarRental {
 
 	private ArrayList<Car> cars;
 
-
+	//Constructor new object
 	public CarRental (String Name, String Owner) {
 		this.name = Name;
 		this.owner = Owner;
 		this.date_foundation = LocalDate.now();
 		this.revenue = 0.0;
+		this.cars = new ArrayList<Car>();
 	}
 
 	
@@ -72,9 +73,10 @@ public class CarRental {
 		this.revenue = revenue;
 	}
 
-	// ------------- Method -------------
+	// ------------- Methods -------------
 
 	public void printAllCar() throws InterruptedException {
+		int i = 0;
 		try {
             Runtime.getRuntime().exec("clear");
     	}
@@ -82,7 +84,7 @@ public class CarRental {
 		System.out.println("                  All cars                  \n" + 
 							"----------------------------------------------\n");
 		for( Car x : this.cars ) {
-			System.out.println("\n1) " + x.get_model() + "\t\t" + x.get_licensePlate());
+			System.out.println( i +") " + x.get_model() + "\t\t" + x.get_licensePlate() + "\n");
 		}
 	}
 
@@ -94,21 +96,16 @@ public class CarRental {
 		this.cars.remove(index);
 	}
 
-	public void editCar( int index, Car car ) {
-		this.cars.set(index, car);
+	public boolean rentCar( int index , Customer customer) {
+		boolean flag;
+		flag = this.cars.get(index).rent_car(customer);
+		return flag;
 	}
 
-
-	public void rentCar() {
-
+	public boolean returnCar( int index) {
+		boolean flag;
+		flag = this.cars.get(index).return_car();
+		return flag;
 	}
-
-	public void returnCar() {
-
-	}
-
-
-
-
 
 }

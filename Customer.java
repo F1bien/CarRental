@@ -6,11 +6,12 @@ public class Customer {
 	private String startDateRent;
 	private String endDateRent;
 	
-	public Customer(String name, String sur, String DOB, String lPlate) {
+	//Constructor new object
+	public Customer(String name, String sur, String DOB) {
 		this.name = name;
 		this.surname = sur;
 		this.dateOfBirth = DOB;
-		this.licensePlate = lPlate;
+		this.licensePlate = "";
 	}
 
 	// ------------- Get -------------
@@ -47,6 +48,9 @@ public class Customer {
 	}
 	public void setDOB(String DOB) {
 		this.dateOfBirth = DOB;
+	}
+	public void setLicensePlate(String LPlate) {
+		this.licensePlate = LPlate;
 	}
 	public void setStartDateRent(String startrent) {
 		this.startDateRent = startrent;

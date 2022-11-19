@@ -10,7 +10,7 @@ public class Car {
 	private	Customer cli;
 	private	boolean rented;
 		
-	
+	//Constructor new object
 	public Car(String licensePlate, String brand, String model, double cilindrata, String anno, int seats,
 				double price )
 	{
@@ -22,6 +22,20 @@ public class Car {
 		this.seats =  seats;
 		this.price = price;
 		this.rented = false;
+	}
+
+	//Constructor copy object
+	public Car(Car car, String anno,String licensePlate ) {
+		
+		this.anno = anno;
+		this.licensePlate = licensePlate;
+		this.brand = car.brand;
+		this.model = car.model;
+		this.cilindrata = car.cilindrata;
+		this.seats =  car.seats;
+		this.price = car.price;
+		this.rented = false;
+
 	}
 	
 	// ------------- Get -------------
@@ -75,41 +89,34 @@ public class Car {
 		this.rented = rented;
 	}
 	 
-	 
-	 public boolean rent_car(Customer customer) {
+	// ------------- Methods -------------
+
+	public boolean rent_car(Customer customer) {
 		 
 		if(this.rented == false){	
-		this.cli = customer;
-		set_rented(true);
-		return true;
+			this.cli = customer;
+			this.cli.setLicensePlate(this.licensePlate);
+			set_rented(true);
+			return true;
 		}
+
 		return false;
 		
-	 }
+	}
 	 
 	public boolean return_car() {
 		
 		if(this.rented == true) {
 			this.cli  = null;
-			this.rented = false;
+			set_rented(false);
 			return true;
 		}
+
 		return false;
 	}
 	
 	
-	public Car(Car car, String anno,String licensePlate ) {
-		
-		this.anno = anno;
-		this.licensePlate = licensePlate;
-		this.brand = car.brand;
-		this.model = car.model;
-		this.cilindrata = car.cilindrata;
-		this.seats =  car.seats;
-		this.price = car.price;
-		this.rented = false;
-
-	}
+	
 	 
 	 
 

@@ -1,12 +1,13 @@
-
+import java.util.Scanner;
 
 public class CarRentalApp {
 
     public static void main(String[] args) {
-        
+        int i=0, index;
 		CarRental rental = new CarRental("", "");
 		boolean exit = false;
 		Scanner scanner = new Scanner(System.in);
+		String input;
 
 		while ( !exit ) {
 			System.out.println("Select Option :\n\t" +
@@ -14,11 +15,16 @@ public class CarRentalApp {
 									"1) Rent Car\n\t" +
 									"2) Return Car\n\t" +
 									"3) Add Car\n\t" +
-									"4) Edit Car" +
+									"4) Edit Car\n\t" +
 									"5) Remove Car\n\t");
 
 			
-			String input = scanner.nextLine();
+			input = scanner.nextLine();
+
+			if(input != "0"){
+				rental.printAllCar();
+			}
+				
 
 			switch (input) {
 				case "0": 
@@ -26,7 +32,10 @@ public class CarRentalApp {
 				break;
 
 				case "1":
-					rental.rentCar();
+					
+					System.out.print("which car would you like to rent?:\t");
+					index = scanner.nextInt();
+					rental.rentCar( index , );
 				break;
 
 				case "2":
@@ -51,5 +60,6 @@ public class CarRentalApp {
 					System.out.println("Error");
 			}
 		}
+		scanner.close();
 	}
 }
