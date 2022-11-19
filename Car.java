@@ -7,12 +7,12 @@ public class Car {
 	private	String anno;
 	private	int seats;
 	private	double price;
-	private	Customer custumer;
+	private	Customer cli;
 	private	boolean rented;
 		
 	
 	public Car(String licensePlate, String brand, String model, double cilindrata, String anno, int seats,
-				double price, boolean rented )
+				double price )
 	{
 		this.licensePlate = licensePlate;
 		this.brand = brand;
@@ -21,7 +21,7 @@ public class Car {
 		this.anno = anno;
 		this.seats =  seats;
 		this.price = price;
-		this.rented = rented;
+		this.rented = false;
 	}
 	
 	//get
@@ -76,20 +76,41 @@ public class Car {
 	}
 	 
 	 
-	 public boolean rent_car(Costumer costumer) {
+	 public boolean rent_car(Customer customer) {
 		 
 		if(this.rented == false){	
-		this.costumer = costumer;
+		this.cli = customer;
 		set_rented(true);
 		return true;
 		}
 		return false;
 		
 	 }
+	 
+	public boolean return_car() {
+		
+		if(this.rented == true) {
+			this.cli  = null;
+			this.rented = false;
+			return true;
+		}
+		return false;
+	}
+	
+	
+	public Car(Car car, String anno,String licensePlate ) {
+		
+		this.anno = anno;
+		this.licensePlate = licensePlate;
+		this.brand = car.brand;
+		this.model = car.model;
+		this.cilindrata = car.cilindrata;
+		this.seats =  car.seats;
+		this.price = car.price;
+		this.rented = false;
 
+	}
+	 
+	 
 
-	
-	
-	
-	
 }
