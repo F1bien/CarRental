@@ -7,7 +7,7 @@ public class CarRentalApp {
 		CarRental rental = new CarRental("", "");
 		boolean exit = false;
 		Scanner scanner = new Scanner(System.in);
-		String input;
+		String input, name, surname, DOB;
 
 		while ( !exit ) {
 			System.out.println("Select Option :\n\t" +
@@ -32,14 +32,21 @@ public class CarRentalApp {
 				break;
 
 				case "1":
-					
 					System.out.print("which car would you like to rent?:\t");
 					index = scanner.nextInt();
-					rental.rentCar( index , );
+					System.out.print("Insert customer data(name, surname and DOB):\t");
+					name = scanner.next();
+					surname = scanner.next();
+					DOB = scanner.next();
+					Customer c = new Customer(name, surname, DOB);
+					rental.rentCar(index, c);
+
 				break;
 
 				case "2":
-					rental.returnCar();
+					System.out.print("which car would you like to return?:\t");
+					index = scanner.nextInt();
+					rental.returnCar(index);
 				break;
 
 				case "3":
