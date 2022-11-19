@@ -37,6 +37,8 @@
 
 */
 
+import java.util.Scanner;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -45,8 +47,8 @@ public class CarRental {
 	private String name;
 	private String owner;
 	private String manager;
-	private String date_foundation;
-	private float revenue;
+	private LocalDate date_foundation;
+	private double revenue;
 
 
 	private ArrayList<Car> cars;
@@ -62,30 +64,47 @@ public class CarRental {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		CarRental rental = new CarRental();
+		CarRental rental = new CarRental("", "");
 		boolean exit = false;
-
+		Scanner scanner = new Scanner(System.in);
+		
 		while ( !exit ) {
 			System.out.println("Select Option :\n\t" +
 									"0) Exit\n\t" +
 									"1) Rent Car\n\t" +
-									"2) Add Car\n\t" +
-									"3) boh");
+									"2) Return Car\n\t" +
+									"3) Add Car\n\t" +
+									"4) Edit Car" +
+									"5) Remote Car\n\t");
 
-			char input = reader.findInLine(".").charAt(0);
+			
+			String input = scanner.nextLine();
 
 			switch (input) {
-				case 0: 
+				case "0": 
 					exit = true;
 				break;
 
-				case 1: 
-					
+				case "1":
+					rental.rentCar();
 				break;
 
-				case 2: 
+				case "2":
+					rental.returnCar();
+				break;
+
+				case "3":
 					// input car property
-					rental.addCar();
+
+					//rental.addCar(new Car());
+				break;
+
+				case "4":
+
+				break;
+
+				case "5":
+
 				break;
 
 				default:
@@ -113,16 +132,16 @@ public class CarRental {
 		return this.manager;
 	}
 
-	public String  getDate_foundation () {
+	public LocalDate  getDate_foundation () {
 		return this.date_foundation;
 	}
 
-	public float getRevenue () {
+	public double getRevenue () {
 		return this.revenue;
 	}
 
 
-	public Car getCars ()
+	//public Car getCars ()
 
 	// ------------- Set -------------
 	 
@@ -138,20 +157,49 @@ public class CarRental {
 		this.manager = manager;
 	}
 
-	public void setfoundation ( String date_foundation ) {
+	public void setfoundation ( LocalDate date_foundation ) {
 		this.date_foundation = date_foundation;
 	}
 
-	public void setrvenue ( float revenue ) {
+	public void setrvenue ( double revenue ) {
 		this.revenue = revenue;
 	}
 
-
 	// ------------- Method -------------
+
+	public void printAllCar() throws InterruptedException {
+		try {
+            Runtime.getRuntime().exec("clear");
+    	}
+    	catch (IOException ex) {}
+		System.out.println("                  All cars                  \n" + 
+							"----------------------------------------------\n");
+		for( Car x : this.cars ) {
+			System.out.println("\n1) " + x.get_model() + "\t\t" + x.get_licensePlate());
+		}
+	}
 
 	public void addCar( Car car ) {
 		this.cars.add(car);
 	}
+
+	public void removeCar( int index ) {
+		this.cars.remove(index);
+	}
+
+	public void editCar( int index, Car car ) {
+		this.cars.set(index, car);
+	}
+
+
+	public void rentCar() {
+
+	}
+
+	public void returnCar() {
+
+	}
+
 
 
 
