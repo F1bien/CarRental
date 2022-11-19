@@ -24,7 +24,7 @@ public class Car {
 		this.rented = false;
 	}
 	
-	//get
+	// ------------- Get -------------
 	
 	public String get_brand() {
 		return brand;
@@ -48,7 +48,7 @@ public class Car {
 		return price;
 	}
 	
-	//set
+	// ------------- Set -------------
 	
 	public void set_brand(String brand) {
 		this.brand = brand;
