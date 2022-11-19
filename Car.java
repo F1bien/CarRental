@@ -11,9 +11,7 @@ public class Car {
 	private	boolean rented;
 		
 	//Constructor new object
-	public Car(String licensePlate, String brand, String model, double cilindrata, String anno, int seats,
-				double price )
-	{
+	public Car (String licensePlate, String brand, String model, double cilindrata, String anno, int seats, double price ) {
 		this.licensePlate = licensePlate;
 		this.brand = brand;
 		this.model = model;

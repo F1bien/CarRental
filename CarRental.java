@@ -19,6 +19,7 @@ public class CarRental {
 	public CarRental (String Name, String Owner) {
 		this.name = Name;
 		this.owner = Owner;
+		this.manager = Owner;
 		this.date_foundation = LocalDate.now();
 		this.revenue = 0.0;
 		this.cars = new ArrayList<Car>();

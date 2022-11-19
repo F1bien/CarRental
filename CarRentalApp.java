@@ -2,10 +2,10 @@ import java.util.Scanner;
 
 public class CarRentalApp {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         int i=0, index;
 		CarRental rental = new CarRental("", "");
-		boolean exit = false;
+		boolean exit = false, flag;
 		Scanner scanner = new Scanner(System.in);
 		String input, name, surname, DOB;
 
@@ -14,8 +14,8 @@ public class CarRentalApp {
 									"0) Exit\n\t" +
 									"1) Rent Car\n\t" +
 									"2) Return Car\n\t" +
-									"3) Add Car\n\t" +
-									"4) Edit Car\n\t" +
+									"3) Buy Car\n\t" +
+									"4) Change Customer\n\t" +
 									"5) Remove Car\n\t");
 
 			
@@ -39,7 +39,10 @@ public class CarRentalApp {
 					surname = scanner.next();
 					DOB = scanner.next();
 					Customer c = new Customer(name, surname, DOB);
-					rental.rentCar(index, c);
+					flag = rental.rentCar(index, c);
+					if (flag == true) {
+
+					}
 
 				break;
 
@@ -50,9 +53,7 @@ public class CarRentalApp {
 				break;
 
 				case "3":
-					// input car property
-
-					//rental.addCar(new Car());
+					System.out.print("Insert customer data(name, surname and DOB):\t");
 				break;
 
 				case "4":
@@ -60,6 +61,10 @@ public class CarRentalApp {
 				break;
 
 				case "5":
+
+				break;
+
+				case "6":
 
 				break;
 
