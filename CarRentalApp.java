@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class CarRentalApp {
 
     public static void main(String[] args) throws InterruptedException {
-        int index;
+        int index, num = 0;
 		CarRental rental = new CarRental("", "");
 		boolean exit = false, flag;
 		Scanner scanner = new Scanner(System.in);
@@ -46,6 +46,7 @@ public class CarRentalApp {
 				break;
 
 				case "2":
+
 					System.out.print("which car would you like to return?:\t");
 					index = scanner.nextInt();
 					flag = rental.returnCar(index);
@@ -57,8 +58,8 @@ public class CarRentalApp {
 				case "3":
 					do {
 						System.out.print("would tou lik to buy a new car(1) or a cop of one(2)?:\t");
-						flag = scanner.nextInt();
-					} while ( flag != 1 && flag != 2 );
+						index = scanner.nextInt();
+					} while ( index != 1 && index != 2 );
 				break;
 
 				case "4":
