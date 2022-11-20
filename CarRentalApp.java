@@ -3,11 +3,12 @@ import java.util.Scanner;
 public class CarRentalApp {
 
     public static void main(String[] args) throws InterruptedException {
-        int i=0, index;
+        int i=0, index, num = 0;
 		CarRental rental = new CarRental("", "");
 		boolean exit = false, flag;
 		Scanner scanner = new Scanner(System.in);
 		String input, name, surname, DOB;
+
 
 		while ( !exit ) {
 			System.out.println("Select Option :\n\t" +
@@ -47,17 +48,24 @@ public class CarRentalApp {
 				break;
 
 				case "2":
+
 					System.out.print("which car would you like to return?:\t");
 					index = scanner.nextInt();
 					rental.returnCar(index);
+
 				break;
 
 				case "3":
-					System.out.print("Insert customer data(name, surname and DOB):\t");
+					
+				System.out.print("which cars would you like to ....... ?:\t");
+				//inserire scelta dei per comprare
+
+				
+
 				break;
 
 				case "4":
-
+					
 				break;
 
 				case "5":
