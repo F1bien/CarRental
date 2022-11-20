@@ -59,6 +59,9 @@ public class Car {
 	public double get_price() {
 		return price;
 	}
+	public boolean get_rented() {
+		return rented;
+	}
 	
 	// ------------- Set -------------
 	
@@ -83,7 +86,7 @@ public class Car {
 	public void set_price(double price) {
 		this.price = price;
 	}
-	 void set_rented(boolean rented) {
+	public void set_rented(boolean rented) {
 		this.rented = rented;
 	}
 	 

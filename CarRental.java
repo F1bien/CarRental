@@ -85,7 +85,7 @@ public class CarRental {
 		System.out.println("                  All cars                  \n" + 
 							"----------------------------------------------\n");
 		for( Car x : this.cars ) {
-			System.out.println( i +") " + x.get_model() + "\t\t" + x.get_licensePlate() + "\n");
+			System.out.println( i +") " + x.get_model() + "\t\t" + x.get_licensePlate() + "\t\trented:" + x.get_rented() + "\n");
 		}
 	}
 
