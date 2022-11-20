@@ -9,6 +9,8 @@ public class Car {
 	private double price;
 	private Customer cli;
 	private boolean rented;
+	
+	
 
 	// Constructor new object
 	public Car(String licensePlate, String brand, String model, double cilindrata, String anno, int seats,
