@@ -48,6 +48,9 @@ public class CarRental {
 	public double getRevenue () {
 		return this.revenue;
 	}
+	public Car getCar (int index) {
+		return this.cars.get(index);
+	}
 
 
 	//public Car getCars ()
@@ -85,7 +88,7 @@ public class CarRental {
 		System.out.println("                  All cars                  \n" + 
 							"----------------------------------------------\n");
 		for( Car x : this.cars ) {
-			System.out.println( i +") " + x.get_model() + "\t\t" + x.get_licensePlate() + "\t\trented:" + x.get_rented() + "\n");
+			System.out.println( i +") " + x.get_brand() + "\n\n" + x.get_model() + "\t\t" + x.get_licensePlate() + "\t\trented:" + x.get_rented() + "\n");
 		}
 	}
 
@@ -106,6 +109,12 @@ public class CarRental {
 	public boolean returnCar( int index) {
 		boolean flag;
 		flag = this.cars.get(index).return_car();
+		return flag;
+	}
+
+	public boolean changeCustomer( int index, Customer c) {
+		boolean flag;
+		flag = this.cars.get(index).change_customer(c);
 		return flag;
 	}
 

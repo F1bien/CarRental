@@ -115,6 +115,16 @@ public class Car {
 
 		return false;
 	}
+
+	public boolean change_customer(Customer c) {
+		
+		if(this.rented == true) {
+			this.cli  = c;
+			return true;
+		}
+
+		return false;
+	}
 	
 	
 	
